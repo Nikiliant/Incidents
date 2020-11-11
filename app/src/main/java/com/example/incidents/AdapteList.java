@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.maps.MapView;
+
 import java.util.List;
 
 public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
@@ -22,6 +24,8 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public final TextView textView;
+        public final TextView textContainer;
+        public final MapView mapViewIncident;
 
         public MyViewHolder(View v) {
             super(v);
@@ -32,6 +36,9 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
                 }
             });
             textView = (TextView) v.findViewById(R.id.textView);
+            textContainer = (TextView) v.findViewById(R.id.textContainer);
+            mapViewIncident = (MapView) v.findViewById(R.id.mapViewIncident);
+
         }
 
         public TextView getTextView () {
@@ -67,6 +74,7 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
         // - replace the contents of the view with that element
 
         holder.getTextView().setText(mDataset.get(position));
+
 
     }
 
