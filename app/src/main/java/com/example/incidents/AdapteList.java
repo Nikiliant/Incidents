@@ -18,6 +18,10 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
     private static final String TAG = "CustomAdapter";
     private List<String> mDataset;
 
+    void DataContainer (Context context, List<String> mDataset) {
+        this.mDataset = mDataset;
+    }
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -41,10 +45,12 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
 
         }
 
+
         public TextView getTextView () {
             return textView;
         }
     }
+
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public AdapteList (List<String> myDataset) {
@@ -64,8 +70,11 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
         View view = inflater.inflate(layoutIdForListItem, viewGroup, false);
         MyViewHolder viewHolder = new MyViewHolder(view);
 
+
         return viewHolder;
     }
+
+
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
@@ -73,7 +82,13 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
+        //Втыкаем данные в название
         holder.getTextView().setText(mDataset.get(position));
+        //Втыкаем данные в краткое описание
+        holder.textContainer.setText("Ble-ble-ble"+position);
+        //Втыкаем данные местоположения - пока хз как
+        //holder.mapViewIncident
+
 
 
     }

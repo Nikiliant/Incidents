@@ -59,6 +59,7 @@ public class RecyclerViewFragment extends Fragment {
         mAdapteList = new AdapteList(mDataset);
         mRecyclerView.setAdapter(mAdapteList);
         setRecyclerViewLayoutManager(LayoutManagerType.LINEAR_LAYOUT_MANAGER);
+
         return rootview;
     }
 
