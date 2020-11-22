@@ -87,9 +87,6 @@ public class AdapteList extends RecyclerView.Adapter<AdapteList.MyViewHolder> {
         //Втыкаем данные в краткое описание
         holder.textContainer.setText("Ble-ble-ble"+position);
         //Втыкаем данные местоположения - пока хз как
-        //holder.mapViewIncident
-
-
 
     }
 
