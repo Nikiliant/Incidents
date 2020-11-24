@@ -1,26 +1,22 @@
 package com.example.incidents;
 
-import android.content.res.Resources;
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.View;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
-import java.util.ArrayList;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +39,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         //.setAction("Action", null).show();
-                setContentView(R.layout.activity_maps);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, IncidentsActivity.class);
+                startActivity(intent);
+                //setContentView(R.layout.activity_incidents);
+
             }
+
         });
+
     }
 }
